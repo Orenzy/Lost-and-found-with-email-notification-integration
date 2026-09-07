@@ -56,42 +56,66 @@ function ReportLostItem() {
     }
   }
 
-  const handleImageChange = async (e) => {
-    const file = e.target.files?.[0] || null;
-    setAnalysis(null);
-    setVerificationAnswers({});
-    setError("");
+const handleImageChange = async (e) => {
+  const file = e.target.files?.[0];
 
-    if (!file) {
-      setItem((current) => ({ ...current, imageDataUrl: "" }));
-      return;
-    }
-    if (!file.type.startsWith("image/")) {
-      setError("Please select a valid image file.");
-      return;
-    }
-    if (file.size > 5 * 1024 * 1024) {
-      setError("Image must be smaller than 5 MB.");
-      return;
+  setAnalysis(null);
+  setVerificationAnswers({});
+  setError("");
+
+  if (!file) {
+    setItem((current) => ({
+      ...current,
+      imageDataUrl: "",
+    }));
+    return;
+  }
+
+  if (!file.type.startsWith("image/")) {
+    setError("Please select a valid image file.");
+    return;
+  }
+
+  if (file.size > 5 * 1024 * 1024) {
+    setError("Image must be smaller than 5 MB.");
+    return;
+  }
+
+  try {
+    const dataUrl = await fileToDataUrl(file);
+
+    console.log("IMAGE SELECTED:", {
+      name: file.name,
+      type: file.type,
+      size: file.size,
+      dataUrlLength: dataUrl?.length,
+      startsCorrectly: dataUrl?.startsWith("data:image/"),
+    });
+
+    if (!dataUrl || !dataUrl.startsWith("data:image/")) {
+      throw new Error(
+        "The selected image could not be converted correctly."
+      );
     }
 
-    try {
-      const dataUrl = await fileToDataUrl(file);
-      setItem((current) => ({ ...current, imageDataUrl: dataUrl }));
-      await runPhotoAnalysis(dataUrl);
-    } catch (err) {
-      setError(err.message);
-    }
-  };
+    setItem((current) => ({
+      ...current,
+      imageDataUrl: dataUrl,
+    }));
+
+    await runPhotoAnalysis(dataUrl);
+  } catch (err) {
+    console.error("IMAGE UPLOAD ERROR:", err);
+    setError(`Image upload failed: ${err.message}`);
+  }
+};
 
   // Generate moderately specific ownership verification questions.
   // The owner creates the private answers when reporting the lost item, and the claimant
   // must later reproduce all three answers before a claim can go to admin review.
-  const simpleQuestions = analysis ? [
-    "What is the main colour and one secondary colour of your item?",
-    "What brand, logo, or visible text is on the item? If none, type none.",
-    "Name one distinctive feature of the item (for example a scratch, pattern, strap, sticker, case, or special mark).",
-  ] : [];
+ const simpleQuestions = Array.isArray(analysis?.privateVerificationQuestions)
+  ? analysis.privateVerificationQuestions
+  : [];
 
   const handleSubmit = (e) => {
     e.preventDefault();

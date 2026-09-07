@@ -203,3 +203,53 @@ export async function testEmail({ to }) {
     `,
   });
 }
+
+export function adminLostReportEmail({ lostItem }) {
+  const subject = `New lost item report: ${lostItem?.title || "Lost item"}`;
+
+  const html = wrapHtml({
+    heading: "New Lost Item Report Submitted",
+    intro: "A user has submitted a new lost-item report and it requires administrator attention.",
+    rows: [
+      { label: "Item", value: lostItem?.title },
+      { label: "Category", value: lostItem?.category },
+      { label: "Location lost", value: lostItem?.location },
+      { label: "Date lost", value: lostItem?.dateLost },
+      { label: "Reporter", value: lostItem?.reporterEmail },
+    ],
+    ctaText:
+      "Next step: log in to the administrator dashboard and review the lost-item report.",
+    ctaColor: "#2563eb",
+  });
+
+  return { subject, html };
+}
+
+export function adminClaimSubmittedEmail({ claim, lostItem, foundItem }) {
+  const subject = `New claim requires review: ${lostItem?.title || "Lost item"}`;
+
+  const html = wrapHtml({
+    heading: "New Claim Requires Administrator Review",
+    intro:
+      "A user has successfully completed ownership verification and submitted a claim. Please review the claim before releasing the item.",
+    rows: [
+      { label: "Claim reference", value: claim?.id },
+      { label: "Lost item", value: lostItem?.title },
+      { label: "Potential found item", value: foundItem?.title },
+      { label: "Claimant", value: claim?.claimantEmail },
+      {
+        label: "AI match score",
+        value: claim?.score != null ? `${claim.score}%` : "",
+      },
+      {
+        label: "Verification",
+        value: claim?.verificationPassed ? "Passed" : "Not passed",
+      },
+    ],
+    ctaText:
+      "Next step: open Admin Claim Reviews and approve or reject this claim.",
+    ctaColor: "#16a34a",
+  });
+
+  return { subject, html };
+}

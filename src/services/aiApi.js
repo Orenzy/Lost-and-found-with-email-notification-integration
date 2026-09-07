@@ -21,9 +21,37 @@ export const aiApi = {
 
 export function fileToDataUrl(file) {
   return new Promise((resolve, reject) => {
+    if (!file) {
+      reject(new Error("No image was selected."));
+      return;
+    }
+
     const reader = new FileReader();
-    reader.onload = () => resolve(reader.result);
-    reader.onerror = () => reject(new Error("Could not read the selected image."));
+
+    reader.onload = () => {
+      const result = reader.result;
+
+      if (
+        typeof result !== "string" ||
+        !result.startsWith("data:image/")
+      ) {
+        reject(
+          new Error("The selected file is not a valid image.")
+        );
+        return;
+      }
+
+      resolve(result);
+    };
+
+    reader.onerror = () => {
+      reject(new Error("Could not read the selected image."));
+    };
+
+    reader.onabort = () => {
+      reject(new Error("Image reading was cancelled."));
+    };
+
     reader.readAsDataURL(file);
   });
 }
