@@ -1,0 +1,724 @@
+/* =========================================
+   VIEW LOST ITEMS
+   Matches View Found Items Theme
+   Functionality remains separate
+   ========================================= */
+
+.view-container {
+    min-height: 100vh;
+
+    box-sizing: border-box;
+
+    padding: 50px 30px 70px;
+
+    color: var(--text-main);
+
+    background: var(--background);
+}
+
+
+/* =========================================
+   PAGE HEADER
+   ========================================= */
+
+.view-container .view-header {
+    width: min(1120px, 100%);
+
+    margin: 0 auto 32px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    gap: 24px;
+}
+
+
+/* =========================================
+   EYEBROW
+   ========================================= */
+
+.view-container .view-eyebrow {
+    margin: 0 0 7px;
+
+    color: var(--primary);
+
+    font-size: 11px;
+
+    font-weight: 900;
+
+    letter-spacing: 0.16em;
+}
+
+
+/* =========================================
+   TITLE
+   ========================================= */
+
+.view-container .view-header h1 {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin: 0 0 9px;
+
+    color: var(--text-main);
+
+    font-size: 36px;
+
+    line-height: 1.15;
+
+    font-weight: 800;
+}
+
+
+.view-container .view-header h1 svg {
+    color: var(--primary);
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================
+   DESCRIPTION
+   ========================================= */
+
+.view-container .view-header > div > p:last-child {
+    margin: 0;
+
+    max-width: 620px;
+
+    color: var(--text-muted);
+
+    font-size: 15px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   BACK BUTTON
+   ========================================= */
+
+.view-container .back-btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    min-width: 125px;
+
+    padding: 12px 18px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+
+    background: var(--glass);
+
+    color: var(--text-main);
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    backdrop-filter: blur(12px);
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+
+.view-container .back-btn:hover {
+    transform: translateY(-2px);
+
+    background: var(--glass-strong);
+
+    border-color: rgba(37, 99, 235, 0.35);
+}
+
+
+/* =========================================
+   EMPTY STATE
+   ========================================= */
+
+.view-container .empty-found-state {
+    width: min(680px, 100%);
+
+    margin: 70px auto;
+
+    padding: 58px 35px;
+
+    box-sizing: border-box;
+
+    text-align: center;
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    background: var(--glass);
+
+    backdrop-filter: blur(20px);
+
+    -webkit-backdrop-filter: blur(20px);
+
+    box-shadow: var(--shadow);
+
+    color: var(--text-main);
+}
+
+
+.view-container .empty-found-state > svg {
+    width: 60px;
+
+    height: 60px;
+
+    margin-bottom: 20px;
+
+    color: var(--primary);
+}
+
+
+.view-container .empty-found-state h2 {
+    margin: 0 0 10px;
+
+    color: var(--text-main);
+
+    font-size: 26px;
+
+    font-weight: 800;
+}
+
+
+.view-container .empty-found-state p {
+    max-width: 500px;
+
+    margin: 0 auto 26px;
+
+    color: var(--text-muted);
+
+    line-height: 1.65;
+}
+
+
+.view-container .empty-found-state button {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 13px 23px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: var(--primary);
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 25px rgba(37, 99, 235, 0.20);
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.view-container .empty-found-state button:hover {
+    transform: translateY(-2px);
+
+    background: var(--primary-hover);
+
+    box-shadow:
+        0 12px 30px rgba(37, 99, 235, 0.30);
+}
+
+
+/* =========================================
+   ITEMS LIST
+   ========================================= */
+
+.view-container .found-items-list {
+    width: min(1120px, 100%);
+
+    margin: 0 auto;
+
+    display: grid;
+
+    gap: 18px;
+}
+
+
+/* =========================================
+   ITEM CARD
+   ========================================= */
+
+.view-container .found-item-card-list {
+    display: grid;
+
+    grid-template-columns: 235px 1fr;
+
+    min-height: 235px;
+
+    overflow: hidden;
+
+    border: 1px solid var(--border);
+
+    border-radius: 20px;
+
+    background: var(--glass);
+
+    backdrop-filter: blur(18px);
+
+    -webkit-backdrop-filter: blur(18px);
+
+    box-shadow: var(--shadow);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.view-container .found-item-card-list:hover {
+    transform: translateY(-4px);
+
+    border-color: rgba(37, 99, 235, 0.35);
+
+    box-shadow:
+        0 22px 55px rgba(0, 0, 0, 0.30);
+}
+
+
+/* =========================================
+   IMAGE
+   ========================================= */
+
+.view-container .found-item-image {
+    display: block;
+
+    width: 100%;
+
+    height: 100%;
+
+    min-height: 235px;
+
+    object-fit: cover;
+
+    background: rgba(0, 0, 0, 0.20);
+
+    transition: transform 0.35s ease;
+}
+
+
+.view-container .found-item-card-list:hover
+.found-item-image {
+    transform: scale(1.025);
+}
+
+
+/* =========================================
+   IMAGE PLACEHOLDER
+   ========================================= */
+
+.view-container .found-item-image-placeholder {
+    min-height: 235px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(37, 99, 235, 0.15),
+            transparent 60%
+        );
+
+    color: var(--text-muted);
+
+    font-size: 52px;
+}
+
+
+.view-container .found-item-image-placeholder svg {
+    color: var(--primary);
+}
+
+
+/* =========================================
+   DETAILS
+   ========================================= */
+
+.view-container .found-item-details {
+    min-width: 0;
+
+    padding: 25px 28px;
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+/* =========================================
+   TITLE ROW
+   ========================================= */
+
+.view-container .found-item-title-row {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    gap: 16px;
+}
+
+
+/* =========================================
+   ITEM LABEL
+   ========================================= */
+
+.view-container .found-item-label {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: var(--primary);
+
+    font-size: 10px;
+
+    font-weight: 900;
+
+    letter-spacing: 0.14em;
+}
+
+
+/* =========================================
+   ITEM TITLE
+   ========================================= */
+
+.view-container .found-item-title-row h2 {
+    margin: 0;
+
+    overflow-wrap: anywhere;
+
+    color: var(--text-main);
+
+    font-size: 24px;
+
+    line-height: 1.25;
+
+    font-weight: 800;
+}
+
+
+/* =========================================
+   STATUS
+   ========================================= */
+
+.view-container .found-status {
+    flex-shrink: 0;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 6px 12px;
+
+    border: 1px solid rgba(37, 99, 235, 0.25);
+
+    border-radius: 999px;
+
+    background: rgba(37, 99, 235, 0.13);
+
+    color: #dbeafe;
+
+    font-size: 11px;
+
+    font-weight: 800;
+}
+
+
+/* =========================================
+   DESCRIPTION
+   ========================================= */
+
+.view-container .found-description {
+    margin: 14px 0;
+
+    color: var(--text-muted);
+
+    font-size: 14px;
+
+    line-height: 1.65;
+
+    display: -webkit-box;
+
+    -webkit-line-clamp: 3;
+
+    -webkit-box-orient: vertical;
+
+    overflow: hidden;
+}
+
+
+/* =========================================
+   META INFORMATION
+   ========================================= */
+
+.view-container .found-meta {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-top: auto;
+
+    padding: 14px 0;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+.view-container .found-meta span {
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 7px 10px;
+
+    border-radius: 8px;
+
+    background: rgba(255, 255, 255, 0.055);
+
+    color: var(--text-muted);
+
+    font-size: 12px;
+}
+
+
+.view-container .found-meta strong {
+    color: var(--text-main);
+}
+
+
+/* =========================================
+   ACTIONS
+   ========================================= */
+
+.view-container .found-actions {
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 16px;
+}
+
+
+.view-container .found-actions button {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    min-width: 95px;
+
+    padding: 10px 16px;
+
+    border-radius: 10px;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+
+/* =========================================
+   EDIT BUTTON
+   ========================================= */
+
+.view-container .found-actions .edit-btn {
+    border: 1px solid rgba(37, 99, 235, 0.30);
+
+    background: rgba(37, 99, 235, 0.12);
+
+    color: #dbeafe;
+}
+
+
+.view-container .found-actions .edit-btn:hover {
+    transform: translateY(-2px);
+
+    background: rgba(37, 99, 235, 0.22);
+
+    border-color: rgba(37, 99, 235, 0.45);
+}
+
+
+/* =========================================
+   DELETE BUTTON
+   ========================================= */
+
+.view-container .found-actions .delete-btn {
+    border: 1px solid rgba(248, 113, 113, 0.25);
+
+    background: rgba(239, 68, 68, 0.08);
+
+    color: #fca5a5;
+}
+
+
+.view-container .found-actions .delete-btn:hover {
+    transform: translateY(-2px);
+
+    background: rgba(239, 68, 68, 0.18);
+
+    border-color: rgba(248, 113, 113, 0.45);
+
+    color: #fecaca;
+}
+
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+@media (max-width: 800px) {
+
+    .view-container {
+        padding: 35px 16px 50px;
+    }
+
+    .view-container .view-header {
+        flex-direction: column;
+    }
+
+    .view-container .view-header h1 {
+        font-size: 30px;
+    }
+
+    .view-container .back-btn {
+        width: 100%;
+    }
+
+    .view-container .found-item-card-list {
+        grid-template-columns: 200px 1fr;
+    }
+
+    .view-container .found-item-details {
+        padding: 20px;
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    .view-container .found-item-card-list {
+        grid-template-columns: 1fr;
+    }
+
+    .view-container .found-item-image,
+    .view-container .found-item-image-placeholder {
+        height: 230px;
+
+        min-height: 230px;
+    }
+
+    .view-container .found-item-details {
+        padding: 20px;
+    }
+
+    .view-container .found-item-title-row {
+        flex-direction: column;
+    }
+
+    .view-container .found-status {
+        align-self: flex-start;
+    }
+
+    .view-container .found-actions {
+        flex-direction: column;
+    }
+
+    .view-container .found-actions button {
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 420px) {
+
+    .view-container {
+        padding: 25px 12px 40px;
+    }
+
+    .view-container .view-header h1 {
+        font-size: 26px;
+    }
+
+    .view-container .empty-found-state {
+        margin: 40px auto;
+
+        padding: 40px 22px;
+    }
+
+    .view-container .found-item-title-row h2 {
+        font-size: 21px;
+    }
+
+    .view-container .found-meta {
+        flex-direction: column;
+    }
+
+    .view-container .found-meta span {
+        width: 100%;
+
+        box-sizing: border-box;
+    }
+}

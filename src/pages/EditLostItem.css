@@ -1,0 +1,560 @@
+/* =========================================
+   EDIT LOST ITEM
+   MATCHES USER DASHBOARD THEME
+   ========================================= */
+
+.edit-lost-page {
+    min-height: 100vh;
+
+    padding: 50px 25px 70px;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    /* Use the global body background */
+    background: transparent;
+
+    color: var(--text-main);
+}
+
+
+/* =========================================
+   MAIN CARD
+   ========================================= */
+
+.edit-lost-card {
+    width: min(720px, 100%);
+
+    padding: 38px;
+
+    border-radius: var(--radius);
+
+    background: var(--glass);
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    border: 1px solid var(--border);
+
+    box-shadow: var(--shadow);
+
+    color: var(--text-main);
+}
+
+
+/* =========================================
+   HEADER
+   ========================================= */
+
+.edit-lost-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    gap: 25px;
+
+    margin-bottom: 32px;
+}
+
+
+.edit-lost-eyebrow {
+    margin: 0 0 7px;
+
+    color: var(--primary);
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.14em;
+}
+
+
+.edit-lost-header h1 {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin: 0;
+
+    color: var(--text-main);
+
+    font-size: 32px;
+
+    font-weight: 800;
+}
+
+
+.edit-lost-header h1 svg {
+    color: var(--primary);
+}
+
+
+.edit-lost-header p:last-child {
+    margin: 10px 0 0;
+
+    color: var(--text-muted);
+
+    font-size: 15px;
+}
+
+
+/* =========================================
+   BACK BUTTON
+   ========================================= */
+
+.edit-lost-back-button {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 12px 17px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+
+    background: var(--glass);
+
+    color: var(--text-main);
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+.edit-lost-back-button:hover {
+    transform: translateY(-3px);
+
+    background: var(--glass-strong);
+
+    border-color: rgba(37, 99, 235, 0.45);
+}
+
+
+/* =========================================
+   INPUT GROUP
+   ========================================= */
+
+.edit-lost-input-group {
+    position: relative;
+
+    margin-bottom: 18px;
+}
+
+
+.edit-lost-input-group input,
+.edit-lost-input-group textarea,
+.edit-lost-input-group select {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 15px 16px 15px 48px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 14px;
+
+    outline: none;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    color: var(--text-main);
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    transition:
+        border-color 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.edit-lost-input-group input:focus,
+.edit-lost-input-group textarea:focus,
+.edit-lost-input-group select:focus {
+    border-color: var(--primary);
+
+    background: rgba(255, 255, 255, 0.12);
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+
+/* =========================================
+   SELECT
+   ========================================= */
+
+.edit-lost-input-group select {
+    padding-left: 16px;
+
+    cursor: pointer;
+}
+
+
+.edit-lost-input-group select option {
+    background: var(--background-light);
+
+    color: var(--text-main);
+}
+
+
+/* =========================================
+   TEXTAREA
+   ========================================= */
+
+.edit-lost-input-group textarea {
+    min-height: 140px;
+
+    resize: vertical;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================
+   PLACEHOLDER
+   ========================================= */
+
+.edit-lost-input-group input::placeholder,
+.edit-lost-input-group textarea::placeholder {
+    color: var(--text-muted);
+
+    opacity: 0.7;
+}
+
+
+/* =========================================
+   ICONS
+   ========================================= */
+
+.edit-lost-input-icon {
+    position: absolute;
+
+    left: 17px;
+
+    top: 17px;
+
+    z-index: 2;
+
+    color: var(--primary);
+
+    pointer-events: none;
+}
+
+
+.textarea-group .edit-lost-input-icon {
+    top: 18px;
+}
+
+
+/* =========================================
+   FILE UPLOAD
+   ========================================= */
+
+.edit-lost-file-upload {
+    display: grid;
+
+    gap: 9px;
+
+    margin: 22px 0;
+}
+
+
+.edit-lost-file-upload label {
+    color: var(--text-main);
+
+    font-size: 14px;
+
+    font-weight: 700;
+}
+
+
+.edit-lost-file-upload input {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 12px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.07);
+
+    color: var(--text-muted);
+
+    cursor: pointer;
+}
+
+
+.edit-lost-file-upload input::file-selector-button {
+    margin-right: 12px;
+
+    padding: 8px 13px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: var(--primary);
+
+    color: white;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: background 0.25s ease;
+}
+
+
+.edit-lost-file-upload input::file-selector-button:hover {
+    background: var(--primary-hover);
+}
+
+
+/* =========================================
+   IMAGE PREVIEW
+   ========================================= */
+
+.edit-lost-image-preview {
+    margin: 20px 0;
+
+    padding: 12px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 16px;
+
+    background: rgba(255, 255, 255, 0.06);
+
+    text-align: center;
+}
+
+
+.edit-lost-image-preview img {
+    width: 100%;
+
+    max-height: 300px;
+
+    object-fit: contain;
+
+    border-radius: 12px;
+}
+
+
+/* =========================================
+   SAVE BUTTON
+   ========================================= */
+
+.edit-lost-save-button {
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    padding: 15px;
+
+    margin-top: 10px;
+
+    border: none;
+
+    border-radius: 15px;
+
+    background: var(--primary);
+
+    color: var(--text-main);
+
+    font-size: 17px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.edit-lost-save-button:hover {
+    transform: translateY(-4px);
+
+    background: var(--primary-hover);
+
+    box-shadow:
+        0 10px 25px rgba(37, 99, 235, 0.20);
+}
+
+
+/* =========================================
+   ERROR
+   ========================================= */
+
+.edit-lost-error {
+    margin-bottom: 18px;
+
+    padding: 13px 16px;
+
+    border-radius: 12px;
+
+    border: 1px solid rgba(248, 113, 113, 0.35);
+
+    background: rgba(239, 68, 68, 0.15);
+
+    color: #fecaca;
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   ERROR CARD
+   ========================================= */
+
+.error-card {
+    text-align: center;
+}
+
+
+.error-card > svg {
+    font-size: 52px;
+
+    color: var(--primary);
+
+    margin-bottom: 15px;
+}
+
+
+.error-card h1 {
+    margin: 0 0 10px;
+
+    color: var(--text-main);
+
+    font-size: 28px;
+}
+
+
+.error-card p {
+    margin-bottom: 25px;
+
+    color: var(--text-muted);
+}
+
+
+.error-card button {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    margin: auto;
+
+    padding: 12px 18px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: var(--primary);
+
+    color: var(--text-main);
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.error-card button:hover {
+    background: var(--primary-hover);
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+@media (max-width: 650px) {
+
+    .edit-lost-page {
+        padding: 30px 15px 50px;
+    }
+
+    .edit-lost-card {
+        padding: 25px 20px;
+
+        border-radius: 20px;
+    }
+
+    .edit-lost-header {
+        flex-direction: column;
+    }
+
+    .edit-lost-header h1 {
+        font-size: 27px;
+    }
+
+    .edit-lost-back-button {
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 450px) {
+
+    .edit-lost-page {
+        padding: 20px 10px 40px;
+    }
+
+    .edit-lost-card {
+        padding: 22px 15px;
+    }
+
+    .edit-lost-header h1 {
+        font-size: 24px;
+    }
+
+    .edit-lost-input-group input,
+    .edit-lost-input-group textarea {
+        font-size: 14px;
+    }
+}

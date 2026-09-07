@@ -1,0 +1,16 @@
+:root {
+  --background: #eef6ff;
+  --background-light: #f8fbff;
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --secondary: #7c3aed;
+  --secondary-hover: #6d28d9;
+  --accent: #14b8a6;
+  --glass: rgba(255, 255, 255, 0.88);
+  --glass-strong: rgba(255, 255, 255, 0.97);
+  --border: rgba(59, 130, 246, 0.18);
+  --text-main: #10213b;
+  --text-muted: #5c6f89;
+  --shadow: 0 18px 48px rgba(37, 99, 235, 0.14);
+  --radius: 20px;
+}

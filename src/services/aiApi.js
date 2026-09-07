@@ -1,0 +1,29 @@
+const API_BASE = import.meta.env.VITE_API_BASE_URL || "http://localhost:3001";
+
+async function post(path, body) {
+  const response = await fetch(`${API_BASE}${path}`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(body),
+  });
+  const data = await response.json().catch(() => ({}));
+  if (!response.ok) throw new Error(data.error || "Request failed.");
+  return data;
+}
+
+export const aiApi = {
+  chat: (message, history) => post("/api/ai/chat", { message, history }),
+  analyseItem: (imageDataUrl, item, reportType = "lost") =>
+    post("/api/ai/analyse-item", { imageDataUrl, item, reportType }),
+  matchItems: (lostItem, foundItems) =>
+    post("/api/ai/match-items", { lostItem, foundItems }),
+};
+
+export function fileToDataUrl(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => resolve(reader.result);
+    reader.onerror = () => reject(new Error("Could not read the selected image."));
+    reader.readAsDataURL(file);
+  });
+}

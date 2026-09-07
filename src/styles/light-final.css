@@ -1,0 +1,159 @@
+/* LIGHT FINAL UI — must be imported LAST. Bright, soft, readable across every route. */
+:root{
+  --lf-bg:#f7faff;
+  --lf-bg2:#eef5ff;
+  --lf-card:#ffffff;
+  --lf-text:#13233f;
+  --lf-muted:#60708b;
+  --lf-line:#dbe6f5;
+  --lf-blue:#2f6fed;
+  --lf-blue-dark:#2259c7;
+  --lf-blue-soft:#eaf2ff;
+  --lf-green:#22a06b;
+  --lf-green-soft:#ecfaf3;
+  --lf-red:#e74c5b;
+  --lf-red-soft:#fff0f2;
+  --lf-purple:#7657e8;
+  --lf-purple-soft:#f2efff;
+  --lf-orange:#e98a22;
+  --lf-orange-soft:#fff6e9;
+  --lf-shadow:0 8px 24px rgba(31,60,110,.08);
+}
+html,body,#root{min-height:100%;color-scheme:light!important}
+body{background:linear-gradient(180deg,#f9fbff 0%,#f3f7fd 100%)!important;color:var(--lf-text)!important}
+body::before,body::after{display:none!important}
+
+/* NAVIGATION: light everywhere */
+.navbar{
+  position:sticky!important;top:0!important;z-index:200!important;
+  width:100%!important;max-width:none!important;margin:0!important;
+  padding:12px clamp(16px,4vw,54px)!important;border:0!important;
+  border-bottom:1px solid var(--lf-line)!important;border-radius:0!important;
+  background:rgba(255,255,255,.98)!important;box-shadow:0 5px 18px rgba(32,60,100,.07)!important;
+  backdrop-filter:none!important;-webkit-backdrop-filter:none!important;
+}
+.navbar-logo{color:var(--lf-text)!important;font-weight:900!important}.navbar-logo svg{color:var(--lf-blue)!important}
+.navbar-links button{
+  background:#f2f6fd!important;color:#29405f!important;border:1px solid #d9e5f5!important;
+  box-shadow:none!important;min-height:40px!important;padding:9px 14px!important;border-radius:10px!important;
+}
+.navbar-links button:hover{background:#e8f1ff!important;color:#174baf!important;transform:none!important}
+.navbar-links .logout-nav,.logout-btn{background:var(--lf-red-soft)!important;color:#c23645!important;border:1px solid #f5cbd0!important;box-shadow:none!important}
+.navbar-links .logout-nav:hover,.logout-btn:hover{background:#ffe5e8!important;color:#a92735!important}
+
+/* ALL PAGE BACKGROUNDS */
+.dashboard-container,.admin-container,.claims-page,.verify-page,.ai-match-page,.chat-page,.view-container,
+.lost-item-container,.found-item-container,.edit-found-page,.edit-lost-page,.delete-lost-item-container,
+.home-container,.login-container,.register-container{
+  background:linear-gradient(180deg,#f8fbff,#f3f7fd)!important;color:var(--lf-text)!important;
+}
+.dashboard-container,.admin-container,.view-container{padding:28px clamp(16px,4vw,56px) 48px!important}
+
+/* GLOBAL TYPOGRAPHY */
+h1,h2,h3,h4,h5,h6,.dashboard-hero h1,.dashboard-card h3,.lost-item-card h1,.found-item-card h1,
+.claims-page h1,.verify-page h1,.ai-match-page h1,.chat-page h1,.view-container h1{
+  color:var(--lf-text)!important;text-shadow:none!important;font-weight:850!important;
+}
+p,span,small,.dashboard-card p,.dashboard-hero p,.lost-item-card>p,.found-item-card>p{color:var(--lf-muted)!important;text-shadow:none!important}
+label,strong{color:var(--lf-text)!important;text-shadow:none!important}
+
+/* ALL CARDS: white / very light */
+.dashboard-card,.dashboard-hero,.workflow-strip,.lost-item-card,.found-item-card,.found-item-card-list,.item-card,
+.claim-card,.verify-card,.claim-summary-card,.admin-review-panel,.collection-card,.chat-card,.match-card,.match-control-card,
+.loading-card,.empty-match-state,.stat-card,.edit-found-card,.edit-lost-card,.home-card,.login-card,.register-card,.claims-empty,
+.selected-item-preview,.ai-info-banner,.feature-box,.verification-result,.verify-warning,.collected-banner,.handover-panel{
+  background:#fff!important;color:var(--lf-text)!important;border:1px solid var(--lf-line)!important;
+  box-shadow:var(--lf-shadow)!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;text-shadow:none!important;
+}
+
+/* DASHBOARD HERO */
+.dashboard-hero{
+  max-width:1120px!important;margin:0 auto 18px!important;padding:28px!important;border-radius:22px!important;
+  background:linear-gradient(110deg,#edf5ff 0%,#f8f5ff 58%,#eefcf7 100%)!important;
+  box-shadow:0 8px 25px rgba(58,89,145,.07)!important;
+}
+.dashboard-hero h1{font-size:clamp(30px,4vw,48px)!important;margin:6px 0 10px!important}
+.dashboard-eyebrow{color:#3e78dc!important}
+.dashboard-stats>div{background:rgba(255,255,255,.8)!important;border:1px solid #dce7f5!important;box-shadow:none!important}
+.dashboard-stats strong{color:#1e3760!important}.dashboard-stats span{color:#71819a!important}
+
+/* WORKFLOW STRIP */
+.workflow-strip{max-width:1120px!important;background:#fff!important;box-shadow:none!important;border:1px solid var(--lf-line)!important}
+.workflow-strip>div{background:#f8fbff!important;border:1px solid #e3ebf7!important;color:#354b6a!important}
+.workflow-strip span{background:#eaf2ff!important;color:#2f6fed!important}
+
+/* DASHBOARD FEATURE CARDS: NO SOLID BLUE FILLS */
+.dashboard-grid{max-width:1120px!important}
+.dashboard-card{
+  background:#fff!important;min-height:175px!important;border-radius:18px!important;padding:23px!important;
+  box-shadow:0 7px 22px rgba(36,65,110,.07)!important;color:var(--lf-text)!important;
+}
+.dashboard-card:nth-child(1){background:linear-gradient(180deg,#fff,#fff8f8)!important;border-top:4px solid #ef6b72!important}
+.dashboard-card:nth-child(2){background:linear-gradient(180deg,#fff,#f7fdf9)!important;border-top:4px solid #43ad78!important}
+.dashboard-card:nth-child(3){background:linear-gradient(180deg,#fff,#faf8ff)!important;border-top:4px solid #856de3!important}
+.dashboard-card:nth-child(4){background:linear-gradient(180deg,#fff,#fffaf2)!important;border-top:4px solid #e9a23b!important}
+.dashboard-card:nth-child(5){background:linear-gradient(180deg,#fff,#f7faff)!important;border-top:4px solid #4c82e6!important}
+.dashboard-card:nth-child(6){background:linear-gradient(180deg,#fff,#f7fcfb)!important;border-top:4px solid #4aa6a0!important}
+.dashboard-card:hover{background:#fff!important;transform:translateY(-2px)!important;border-color:#c8d8ee!important;box-shadow:0 12px 28px rgba(36,65,110,.10)!important}
+.dashboard-card h3{color:#173154!important}.dashboard-card p{color:#64748b!important}.dashboard-card small{color:#3b6fc5!important}
+.dashboard-card-top svg{color:#4d7fe1!important}.dashboard-card-top span{background:#f0f5ff!important;color:#3d66ad!important;border:1px solid #dbe6f6!important}
+
+/* FORMS */
+.lost-item-card,.found-item-card,.edit-found-card,.edit-lost-card{background:#fff!important;border-radius:20px!important}
+.input-group,.found-input-group,.edit-input-group{background:#fff!important}
+input,textarea,select,.input-group input,.input-group textarea,.found-input-group input,.found-input-group textarea,
+.edit-input-group input,.edit-input-group textarea,.verification-question input,.admin-review-panel input,.admin-review-panel textarea,.chat-form input{
+  background:#fff!important;color:#19304f!important;border:1.5px solid #cfdced!important;border-radius:11px!important;
+  box-shadow:none!important;font-weight:550!important;
+}
+input::placeholder,textarea::placeholder{color:#8a98ad!important}
+input:focus,textarea:focus,select:focus{border-color:#6f99eb!important;box-shadow:0 0 0 3px rgba(47,111,237,.10)!important}
+.file-upload,.found-file-upload,.edit-file-upload{background:#f7faff!important;border:1.5px dashed #9dbcf1!important;color:#315987!important}
+.lost-item-card section,.found-item-card section{background:#f8fbff!important;border:1px solid #e0eaf6!important}
+.form-intro-badge{background:#eef5ff!important;color:#315f9f!important;border:1px solid #d5e4f8!important}
+
+/* BUTTONS: softer but clearly visible */
+button,.primary-action,.secondary-action,.approve-action,.reject-action,.verify-submit,.run-match-button,.claim-button,
+.found-submit-button,.edit-save-button,.edit-lost-save-button,.login-btn,.register-btn,.auth-login-btn{
+  opacity:1!important;visibility:visible!important;text-shadow:none!important;font-weight:800!important;border-radius:10px!important;
+  min-height:42px!important;box-shadow:none!important;transition:.16s ease!important;
+}
+button:not(.secondary-action):not(.reject-action):not(.logout-nav):not(.delete-btn):not(.back-button):not(.verify-back):not(.chat-back-button):not(.found-back-button):not(.edit-back-button):not(.edit-lost-back-button):not(.back-btn):not(.cancel-edit-button){
+  background:var(--lf-blue)!important;color:#fff!important;border:1px solid var(--lf-blue)!important;
+}
+button:hover{filter:none!important;transform:translateY(-1px)!important}
+button:not(.secondary-action):not(.reject-action):not(.logout-nav):hover{background:var(--lf-blue-dark)!important}
+.secondary-action,.back-button,.verify-back,.chat-back-button,.found-back-button,.edit-back-button,.edit-lost-back-button,.back-btn,.cancel-edit-button{
+  background:#f3f6fb!important;color:#38506f!important;border:1px solid #d3dfef!important;box-shadow:none!important;
+}
+.approve-action,.primary-action.success{background:#2ca36f!important;color:#fff!important;border-color:#2ca36f!important}
+.reject-action,.delete-btn{background:#e45a67!important;color:#fff!important;border-color:#e45a67!important}
+.claim-button,.run-match-button{background:#7259dc!important;color:#fff!important;border-color:#7259dc!important}
+
+/* CLAIM / VERIFY / MATCH / CHAT */
+.ai-match-header,.claims-header,.verify-header,.chat-header,.view-header{background:#fff!important;border:1px solid var(--lf-line)!important;box-shadow:0 6px 20px rgba(36,65,110,.06)!important}
+.match-card,.claim-card,.verify-card,.chat-card{background:#fff!important}
+.claim-summary-card>div,.claim-meta-grid>div{background:#f8faff!important;border:1px solid #e2eaf5!important}
+.verification-question{background:#f8fbff!important;border:1px solid #dde8f5!important}
+.issued-code,.collection-code-panel{background:#effaf4!important;border-color:#87d6ad!important}
+.issued-code strong,.collection-code-panel strong{color:#237a52!important}
+.verification-result.success,.collected-banner{background:#f0fbf5!important;border-color:#a9dfc2!important}
+.verification-result.failed{background:#fff4f5!important;border-color:#f3bdc3!important}
+.pending-admin-review{background:#fff8e8!important;color:#946212!important}.ready-for-collection{background:#ecfaf3!important;color:#21734f!important}.rejected{background:#fff0f2!important;color:#aa3543!important}.collected{background:#eef5ff!important;color:#285baf!important}
+
+/* AUTH SCREENS */
+.home-container,.login-container,.register-container{background:linear-gradient(135deg,#f4f8ff,#fbf9ff 55%,#f2fbf8)!important}
+.home-card,.login-card,.register-card{background:#fff!important;box-shadow:0 14px 40px rgba(37,65,108,.09)!important}
+.register-btn{background:#7259dc!important;color:#fff!important}.login-btn,.auth-login-btn{background:#2f6fed!important;color:#fff!important}
+
+/* ADMIN TABLES / LISTS */
+table{background:#fff!important;color:var(--lf-text)!important;border-collapse:separate!important;border-spacing:0!important;border:1px solid var(--lf-line)!important;border-radius:14px!important;overflow:hidden!important}
+th{background:#f4f8fe!important;color:#304966!important}td{background:#fff!important;color:#53657d!important;border-top:1px solid #edf1f7!important}
+
+/* Any remaining dark/glass utility containers */
+.glass,.glass-card,[class*="glass"],.panel,.section-card{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+
+@media(max-width:850px){
+  .dashboard-grid{grid-template-columns:1fr!important}.workflow-strip{grid-template-columns:repeat(3,1fr)!important}
+  .navbar{align-items:flex-start!important;flex-direction:column!important}.navbar-links{width:100%!important}
+}

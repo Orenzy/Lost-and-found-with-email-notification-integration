@@ -1,0 +1,157 @@
+/* Final clarity layer: consistent high-contrast light UI across every page. */
+:root{
+  --background:#f4f8ff;
+  --background-light:#ffffff;
+  --primary:#2563eb;
+  --primary-hover:#1d4ed8;
+  --secondary:#7c3aed;
+  --accent:#0f9f8f;
+  --glass:#ffffff;
+  --glass-strong:#ffffff;
+  --border:#d9e5f5;
+  --text-main:#12233f;
+  --text-muted:#60718a;
+  --shadow:0 16px 42px rgba(31,78,140,.13);
+}
+
+body, #root{color:#12233f!important;}
+
+/* Top navigation */
+.navbar{
+  background:rgba(255,255,255,.96)!important;
+  border:1px solid #dbe6f4!important;
+  box-shadow:0 10px 28px rgba(31,78,140,.11)!important;
+  backdrop-filter:blur(12px)!important;
+}
+.navbar-logo{color:#12233f!important;}
+.navbar-links button{color:#32455f!important;background:transparent!important;}
+.navbar-links button:hover{background:#edf4ff!important;border-color:#c9dcf7!important;color:#174ea6!important;}
+.navbar-links .logout-nav,.logout-nav{background:#ef5b62!important;color:white!important;border-color:#ef5b62!important;}
+
+/* Generic text readability */
+.dashboard-container,.admin-container,.claims-page,.verify-page,.ai-match-page,.chat-page,
+.lost-item-container,.found-item-container,.view-container,.edit-lost-page,.edit-found-page,
+.delete-lost-item-container,.login-container,.register-container,.home-container{color:#12233f!important;}
+
+.dashboard-hero h1,.admin-hero h1,.claims-header h1,.claim-success-card h1,
+.dashboard-card h3,.admin-card h3,.claim-card h2,.verify-header h1,.verify-card h2,
+.ai-match-title,.chat-header h1,.chat-title-area h1,.section-heading,
+.found-item-header h1,.lost-item-container h1,.view-header h1,
+.edit-lost-header h1,.edit-found-header h1{color:#12233f!important;}
+
+.dashboard-hero p,.admin-hero p,.dashboard-card p,.admin-card p,.claims-header p,.claims-lead,
+.claim-card p,.verify-subtitle,.verify-card p,.ai-subtitle,.chat-header p,.chat-card p,
+.found-description,.found-meta,.edit-subtitle{color:#60718a!important;}
+
+/* Main dashboard / admin surfaces */
+.dashboard-hero,.admin-hero,.dashboard-card,.admin-card,.workflow-strip>div,
+.claim-card,.claims-empty,.claim-success-card,.claim-summary-card,.verify-card,
+.match-control-card,.selected-item-preview,.item-card,.chat-card,
+.lost-item-card,.found-item-card,.edit-lost-card,.edit-found-card,
+.admin-review-panel,.handover-panel,.collection-card,.claim-reference>div,.claim-meta-grid>div{
+  background:#fff!important;
+  border:1px solid #dce7f5!important;
+  color:#12233f!important;
+  box-shadow:0 14px 36px rgba(31,78,140,.10)!important;
+  backdrop-filter:none!important;
+}
+.dashboard-card:hover,.admin-card:hover,.item-card:hover{background:#f7faff!important;border-color:#adc9ee!important;}
+.dashboard-card small,.admin-card small,.dashboard-card-top span,.claim-ref{color:#37628f!important;}
+.dashboard-stats>div,.admin-stats>div{background:#f3f7fd!important;border:1px solid #dce7f5!important;}
+.dashboard-stats strong,.admin-stats strong{color:#1d4ed8!important;}
+.dashboard-stats span,.admin-stats span{color:#60718a!important;}
+.workflow-strip>div{color:#33465f!important;}
+
+/* Forms */
+input,textarea,select,
+.input-group input,.input-group textarea,.textarea-group textarea,.select-wrapper select,
+.verification-question input,.edit-field input,.edit-field textarea,.edit-field select,
+.edit-input-group input,.edit-lost-input-group input,.chat-form input{
+  background:#fff!important;
+  color:#12233f!important;
+  border:1px solid #c8d7ea!important;
+  box-shadow:none!important;
+}
+input::placeholder,textarea::placeholder{color:#8a99ad!important;opacity:1!important;}
+input:focus,textarea:focus,select:focus{border-color:#4f8df7!important;box-shadow:0 0 0 3px rgba(37,99,235,.12)!important;outline:none!important;}
+label,.edit-field label,.verification-question label,.admin-textarea-label{color:#253a56!important;}
+
+/* Primary and secondary buttons */
+.primary-action,.approve-action,.verify-submit,.run-match-button,.claim-button,
+.found-submit-button,.edit-save-button,.edit-lost-save-button,.login-btn,.register-btn,
+.auth-login-btn,.match-action{
+  background:linear-gradient(135deg,#2563eb,#5b55e7)!important;
+  color:#fff!important;
+  border-color:transparent!important;
+  box-shadow:0 8px 20px rgba(37,99,235,.18)!important;
+}
+.secondary-action,.back-button,.back-btn,.verify-back,.found-back-button,.edit-back-button,
+.edit-lost-back-button,.cancel-edit-button,.chat-back-button,.error-back-button{
+  background:#fff!important;
+  color:#274466!important;
+  border:1px solid #cbd9ea!important;
+}
+.reject-action,.delete-btn{color:#fff!important;}
+
+/* Claims and verification */
+.claim-status{background:#fff5d9!important;color:#9a6500!important;border-color:#f2d58a!important;}
+.claim-status.approved,.claim-status.ready-for-collection,.claim-status.collected{background:#e8f7ef!important;color:#177245!important;border-color:#a7dfc0!important;}
+.claim-status.rejected{background:#fff0f0!important;color:#b42b31!important;border-color:#f2b7ba!important;}
+.claims-note,.admin-note,.verification-note,.ai-info-banner{background:#eef5ff!important;color:#355579!important;border:1px solid #cfe0f6!important;}
+.admin-review-panel,.handover-panel{background:#f7faff!important;}
+.progress-step{color:#6c7c91!important;}
+.progress-step span{background:#eef3fa!important;color:#53657d!important;border-color:#cad8e8!important;}
+.progress-step.done{color:#174ea6!important;}.progress-step.done span{background:#2563eb!important;color:#fff!important;}
+
+/* AI matches */
+.ai-match-page{background:linear-gradient(145deg,#f8fbff,#eef5ff 55%,#f5f1ff)!important;}
+.ai-match-header h1,.ai-match-title,.match-top h2,.match-content h3,.reason-heading{color:#12233f!important;}
+.match-meta,.match-content p,.low-match-note,.empty-match-state p,.results-header p{color:#60718a!important;}
+.match-control-card,.selected-item-preview,.match-list .item-card,.empty-match-state{background:#fff!important;border-color:#dce7f5!important;}
+.ai-reason{background:#f5f8fd!important;color:#3d5069!important;border:1px solid #e1e9f4!important;}
+
+/* Chatbot: convert dark glass chat to clear light panels while retaining message distinction */
+.chat-page{background:linear-gradient(145deg,#f8fbff,#edf6ff 55%,#f5f1ff)!important;}
+.chat-card{background:#fff!important;border-color:#dce7f5!important;}
+.chat-title-area h1,.chat-header h2,.assistant,.message{color:#12233f!important;}
+.chat-header p,.ai-disclaimer,.privacy-note{color:#60718a!important;}
+.message-row.assistant .message,.assistant .message{background:#f1f6ff!important;color:#243b59!important;border:1px solid #d6e5f8!important;}
+.message-row.user .message,.user .message{background:#2563eb!important;color:#fff!important;border-color:#2563eb!important;}
+.chat-form{background:#f8fbff!important;border-color:#dce7f5!important;}
+.chat-error{background:#fff0f0!important;color:#a92d34!important;border-color:#f1b8bb!important;}
+.ai-info-banner{color:#365a80!important;}
+
+/* Lost / found report and item pages */
+.lost-item-card,.found-item-card,.found-item-details,.found-items-list .found-item-card,
+.view-container .lost-item-card,.view-container .found-item-card{background:#fff!important;color:#12233f!important;border-color:#dce7f5!important;}
+.lost-item-card h1,.lost-item-card h2,.found-item-card h1,.found-item-card h2,
+.found-item-title-row h3,.found-item-details h3{color:#12233f!important;}
+.found-item-label,.found-label,.found-status,.found-eyebrow,.view-eyebrow,.edit-found-eyebrow,.edit-lost-eyebrow{color:#2563eb!important;}
+.file-upload,.found-file-upload,.edit-file-upload,.edit-lost-file-upload{background:#f7faff!important;border-color:#bcd2ee!important;color:#385674!important;}
+
+/* Collection and drop-off */
+.collection-card,.collection-code-panel,.collection-instructions,.handover-panel,
+.collection-detail-grid>div{background:#fff!important;color:#12233f!important;border-color:#dce7f5!important;}
+.collection-code-panel{background:linear-gradient(135deg,#eef6ff,#f6f1ff)!important;}
+.collection-code-panel strong,.issued-code,.handover-code-row strong{color:#1d4ed8!important;}
+.collection-instructions p,.collection-detail-grid span{color:#60718a!important;}
+.collected-banner,.collection-success-row{background:#e9f8ef!important;color:#176a42!important;border-color:#a6dfc0!important;}
+
+/* Home/auth pages */
+.home-card,.login-card,.register-card{background:rgba(255,255,255,.97)!important;color:#12233f!important;border:1px solid #dce7f5!important;box-shadow:0 18px 44px rgba(31,78,140,.12)!important;}
+.home-card h1,.login-card h1,.register-card h1{color:#12233f!important;}
+.home-card p,.login-card p,.register-card p,.login-link,.register-link,.forgot-password{color:#60718a!important;}
+.feature,.feature-box{color:#4c6481!important;}
+
+/* Explicitly prevent accidental white-on-white from legacy page CSS */
+.dashboard-card,.admin-card,.claims-page,.claim-card,.verify-page,.verify-card,
+.ai-match-page,.chat-page,.lost-item-card,.found-item-card,.view-container,
+.edit-lost-card,.edit-found-card,.collection-card,.admin-review-panel,.handover-panel{
+  --text-main:#12233f!important;
+  --text-muted:#60718a!important;
+}
+
+@media(max-width:760px){
+  .navbar{width:94%!important;padding:14px 16px!important;}
+  .dashboard-hero,.admin-hero{padding:22px!important;}
+}

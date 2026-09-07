@@ -1,0 +1,434 @@
+/* =========================================================
+   HARD CLEAR UI OVERRIDE
+   Imported LAST from main.jsx so legacy dark/glass styles
+   cannot reduce contrast. Solid surfaces, strong navigation,
+   readable labels and controls across every page.
+   ========================================================= */
+:root {
+  --hc-navy: #10233f;
+  --hc-navy-2: #17365f;
+  --hc-blue: #2563eb;
+  --hc-blue-dark: #1d4ed8;
+  --hc-purple: #6d4aff;
+  --hc-text: #17263d;
+  --hc-muted: #5d6f87;
+  --hc-border: #cbd8e8;
+  --hc-soft: #f3f7fc;
+  --hc-soft-blue: #eaf2ff;
+  --hc-card: #ffffff;
+  --hc-green: #15803d;
+  --hc-red: #c62828;
+  --hc-amber: #9a6500;
+}
+
+html, body, #root {
+  min-height: 100%;
+  color: var(--hc-text) !important;
+  background: #f3f7fc !important;
+}
+
+body::before { display: none !important; }
+
+/* ---------- Page foundations ---------- */
+.home-container,
+.login-container,
+.register-container,
+.dashboard-container,
+.admin-container,
+.lost-item-container,
+.found-item-container,
+.view-container,
+.edit-lost-container,
+.edit-found-container,
+.delete-lost-item-container,
+.ai-match-page,
+.chat-page,
+.verify-page,
+.claims-page,
+.collection-page,
+.finder-dropoff-page,
+.admin-intake-page,
+[class*="page"] {
+  background: #f3f7fc !important;
+  color: var(--hc-text) !important;
+}
+
+/* ---------- Navigation: intentionally dark and high contrast ---------- */
+.navbar {
+  width: min(1180px, calc(100% - 32px)) !important;
+  margin: 18px auto 24px !important;
+  padding: 13px 16px !important;
+  background: var(--hc-navy) !important;
+  border: 1px solid #203d63 !important;
+  border-radius: 14px !important;
+  box-shadow: 0 8px 24px rgba(16,35,63,.18) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+.navbar-logo,
+.navbar-logo span,
+.navbar-logo svg {
+  color: #ffffff !important;
+  opacity: 1 !important;
+}
+.navbar-logo svg { color: #77a9ff !important; }
+.navbar-links { gap: 8px !important; }
+.navbar-links button {
+  color: #ffffff !important;
+  background: #17365f !important;
+  border: 1px solid #315279 !important;
+  border-radius: 10px !important;
+  font-weight: 700 !important;
+  opacity: 1 !important;
+  box-shadow: none !important;
+}
+.navbar-links button svg { color: #d9e7ff !important; }
+.navbar-links button:hover {
+  background: #244b7a !important;
+  border-color: #5f86b5 !important;
+  color: #ffffff !important;
+}
+.navbar-links .logout-nav,
+.logout-nav {
+  background: #d84343 !important;
+  border-color: #d84343 !important;
+  color: #ffffff !important;
+}
+
+/* ---------- Solid card surfaces ---------- */
+.home-card,
+.login-card,
+.register-card,
+.dashboard-hero,
+.dashboard-card,
+.admin-hero,
+.admin-card,
+.lost-item-card,
+.found-item-card,
+.edit-lost-card,
+.edit-found-card,
+.delete-card,
+.match-control-card,
+.selected-item-preview,
+.match-list .item-card,
+.empty-match-state,
+.chat-card,
+.verify-card,
+.claim-summary-card,
+.claim-card,
+.claims-empty,
+.claim-success-card,
+.collection-card,
+.dropoff-card,
+.finder-dropoff-card,
+.intake-card,
+.admin-intake-card,
+.view-container .lost-item-card,
+.view-container .found-item-card,
+.collection-detail-grid > div {
+  background: #ffffff !important;
+  color: var(--hc-text) !important;
+  border: 1px solid var(--hc-border) !important;
+  box-shadow: 0 8px 22px rgba(35,65,105,.10) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  opacity: 1 !important;
+}
+
+/* ---------- Typography ---------- */
+h1, h2, h3, h4, h5, h6,
+.dashboard-hero h1,
+.dashboard-card h3,
+.admin-hero h1,
+.admin-card h3,
+.lost-item-card h1,
+.found-item-card h1,
+.chat-title-area h1,
+.chat-header h2,
+.ai-match-header h1,
+.claims-header h1,
+.claim-card h2,
+.collection-success-row h2,
+.verify-card h1,
+.verify-card h2 {
+  color: var(--hc-navy) !important;
+  opacity: 1 !important;
+  text-shadow: none !important;
+}
+
+p,
+small,
+.dashboard-card p,
+.dashboard-hero p,
+.admin-card p,
+.admin-hero p,
+.lost-item-card > p,
+.found-item-card > p,
+.claim-card p,
+.claims-header p,
+.collection-success-row p,
+.chat-header p,
+.results-header p,
+.match-content p,
+.verification-note p {
+  color: var(--hc-muted) !important;
+  opacity: 1 !important;
+}
+
+.dashboard-eyebrow,
+.admin-eyebrow,
+.claims-eyebrow,
+.view-eyebrow,
+.found-eyebrow,
+.edit-found-eyebrow,
+.edit-lost-eyebrow,
+.verify-eyebrow {
+  color: var(--hc-blue) !important;
+  opacity: 1 !important;
+}
+
+/* ---------- Dashboard readability ---------- */
+.dashboard-hero,
+.admin-hero {
+  background: #ffffff !important;
+  border-left: 5px solid var(--hc-blue) !important;
+}
+.dashboard-stats > div,
+.admin-stats > div,
+.workflow-strip > div {
+  background: #eaf2ff !important;
+  border: 1px solid #c6d9f5 !important;
+  color: var(--hc-text) !important;
+  opacity: 1 !important;
+}
+.dashboard-stats strong,
+.admin-stats strong { color: var(--hc-blue-dark) !important; }
+.dashboard-stats span,
+.admin-stats span,
+.workflow-strip > div { color: #405a79 !important; }
+.workflow-strip span {
+  background: var(--hc-blue) !important;
+  color: #ffffff !important;
+}
+.dashboard-card,
+.admin-card { color: var(--hc-text) !important; }
+.dashboard-card-top span {
+  background: #eaf2ff !important;
+  color: #1d4ed8 !important;
+  border: 1px solid #bfd4f2 !important;
+}
+.dashboard-card small,
+.admin-card small { color: var(--hc-blue-dark) !important; }
+.dashboard-card:hover,
+.admin-card:hover {
+  background: #f8fbff !important;
+  border-color: #7fa9df !important;
+}
+
+/* ---------- Forms: visible labels + text backgrounds ---------- */
+label,
+.input-group label,
+.edit-field label,
+.verification-question label,
+.admin-textarea-label,
+.admin-review-panel label {
+  display: block;
+  color: #263b57 !important;
+  font-weight: 700 !important;
+  opacity: 1 !important;
+}
+
+input,
+textarea,
+select,
+.input-group input,
+.input-group textarea,
+.lost-item-card select,
+.found-item-card select,
+.admin-review-panel input,
+.admin-review-panel textarea,
+.handover-code-row input,
+.chat-input,
+.chat-form input {
+  background: #ffffff !important;
+  color: #17263d !important;
+  border: 1.5px solid #b9cbe0 !important;
+  border-radius: 10px !important;
+  box-shadow: inset 0 1px 2px rgba(30,55,85,.03) !important;
+  opacity: 1 !important;
+}
+input::placeholder,
+textarea::placeholder {
+  color: #7b8ca2 !important;
+  opacity: 1 !important;
+}
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--hc-blue) !important;
+  box-shadow: 0 0 0 3px rgba(37,99,235,.14) !important;
+  outline: none !important;
+  background: #ffffff !important;
+}
+select option {
+  background: #ffffff !important;
+  color: #17263d !important;
+}
+input[type="date"] { color-scheme: light !important; }
+
+.file-upload,
+.found-file-upload,
+.edit-file-upload,
+.edit-lost-file-upload {
+  background: #eef5ff !important;
+  color: #334e70 !important;
+  border: 1.5px dashed #7ea7dc !important;
+  opacity: 1 !important;
+}
+.file-upload input,
+.found-file-upload input { color: #334e70 !important; }
+
+/* ---------- Buttons ---------- */
+button,
+.primary-action,
+.approve-action,
+.verify-submit,
+.submit-btn,
+button[type="submit"] {
+  opacity: 1 !important;
+}
+.primary-action,
+.approve-action,
+.verify-submit,
+.submit-btn,
+.lost-item-card button[type="submit"],
+.found-item-card button[type="submit"] {
+  background: var(--hc-blue) !important;
+  color: #ffffff !important;
+  border: 1px solid var(--hc-blue) !important;
+  box-shadow: 0 5px 14px rgba(37,99,235,.18) !important;
+}
+.primary-action:hover,
+.approve-action:hover,
+.verify-submit:hover,
+.submit-btn:hover,
+button[type="submit"]:hover {
+  background: var(--hc-blue-dark) !important;
+}
+.secondary-action,
+.verify-back,
+.collection-code-panel button {
+  background: #ffffff !important;
+  color: var(--hc-navy-2) !important;
+  border: 1px solid #9eb6d2 !important;
+}
+.reject-action,
+.delete-btn { background: #d84343 !important; color: #fff !important; }
+
+/* ---------- AI / matching ---------- */
+.ai-match-page,
+.chat-page { background: #f3f7fc !important; }
+.ai-reason,
+.chat-form,
+.message-row.assistant .message,
+.assistant .message {
+  background: #eef5ff !important;
+  color: #243b59 !important;
+  border: 1px solid #cbdcf2 !important;
+}
+.message-row.user .message,
+.user .message {
+  background: var(--hc-blue) !important;
+  color: #ffffff !important;
+}
+
+/* ---------- Claims / verification ---------- */
+.claims-page { color: var(--hc-text) !important; }
+.claim-meta-grid > div,
+.claim-reference > div,
+.admin-review-panel,
+.handover-panel,
+.collection-instructions {
+  background: #f7faff !important;
+  color: var(--hc-text) !important;
+  border: 1px solid #d4e0ee !important;
+}
+.claim-meta-grid span,
+.claim-reference span,
+.collection-detail-grid span { color: #60718a !important; }
+.claim-ref { color: #385c86 !important; }
+.claims-note,
+.admin-note,
+.verification-note,
+.ai-info-banner {
+  background: #eef5ff !important;
+  color: #355579 !important;
+  border: 1px solid #cbdcf2 !important;
+}
+.claim-status {
+  background: #fff5d9 !important;
+  color: #8b5b00 !important;
+  border: 1px solid #e8c76c !important;
+}
+.claim-status.approved,
+.claim-status.ready-for-collection,
+.claim-status.collected {
+  background: #e9f8ef !important;
+  color: #146c3e !important;
+  border-color: #9bd5b6 !important;
+}
+.claim-status.rejected {
+  background: #fff0f0 !important;
+  color: #a82b31 !important;
+  border-color: #efb7ba !important;
+}
+.progress-step { color: #60718a !important; }
+.progress-step span { background: #e8eef6 !important; color: #455d7b !important; border-color: #c5d4e5 !important; }
+.progress-step.done { color: var(--hc-blue-dark) !important; }
+.progress-step.done span { background: var(--hc-blue) !important; color: #fff !important; }
+
+.collection-code-panel {
+  background: #eaf2ff !important;
+  border: 2px solid #8eb2e4 !important;
+}
+.collection-code-panel span { color: #385c86 !important; }
+.collection-code-panel strong,
+.issued-code,
+.handover-code-row strong { color: var(--hc-blue-dark) !important; }
+.issued-code { background: #eef5ff !important; border-color: #bfd4f2 !important; }
+.collected-banner,
+.collection-success-row {
+  background: #e9f8ef !important;
+  color: #146c3e !important;
+  border: 1px solid #9bd5b6 !important;
+}
+
+/* ---------- Finder drop-off / admin intake ---------- */
+.dropoff-reference,
+.dropoff-code,
+.intake-reference,
+.reference-box,
+[class*="reference"] {
+  color: var(--hc-blue-dark) !important;
+}
+
+/* ---------- Prevent washed-out legacy opacity ---------- */
+.dashboard-container *,
+.admin-container *,
+.lost-item-container *,
+.found-item-container *,
+.claims-page *,
+.verify-page *,
+.ai-match-page *,
+.chat-page * {
+  text-shadow: none !important;
+}
+
+/* ---------- Mobile navigation ---------- */
+@media (max-width: 760px) {
+  .navbar { align-items: stretch !important; }
+  .navbar-links { width: 100% !important; display: grid !important; grid-template-columns: 1fr 1fr !important; }
+  .navbar-links button { justify-content: center !important; }
+  .dashboard-stats, .admin-stats { min-width: 0 !important; width: 100% !important; }
+  .workflow-strip { grid-template-columns: repeat(2,1fr) !important; }
+}

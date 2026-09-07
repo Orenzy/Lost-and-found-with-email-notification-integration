@@ -1,0 +1,605 @@
+/* =========================================
+   REPORT FOUND ITEM
+   Matches Report Lost Item Design
+   ========================================= */
+
+.found-item-container {
+    width: 100%;
+    min-height: 100vh;
+
+    box-sizing: border-box;
+
+    padding: 50px 25px 70px;
+
+    background: transparent;
+
+    color: var(--text-main);
+}
+
+
+/* =========================================
+   MAIN CARD
+   ========================================= */
+
+.found-item-card {
+    width: 600px;
+    max-width: 100%;
+
+    box-sizing: border-box;
+
+    margin: 0 auto;
+
+    padding: 40px;
+
+    background: var(--glass);
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow);
+
+    color: var(--text-main);
+}
+
+
+/* =========================================
+   HEADER
+   ========================================= */
+
+.found-item-header {
+    margin-bottom: 30px;
+
+    text-align: center;
+}
+
+
+/* =========================================
+   EYEBROW
+   ========================================= */
+
+.found-eyebrow {
+    margin: 0 0 8px;
+
+    color: var(--primary);
+
+    font-size: 11px;
+    font-weight: 900;
+
+    letter-spacing: 0.16em;
+
+    text-align: center;
+}
+
+
+/* =========================================
+   TITLE
+   ========================================= */
+
+.found-item-header h1 {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    margin: 0 0 10px;
+
+    color: var(--text-main);
+
+    font-size: 32px;
+    font-weight: 800;
+
+    line-height: 1.2;
+
+    text-align: center;
+}
+
+.found-item-header h1 svg {
+    color: var(--primary);
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================
+   DESCRIPTION
+   ========================================= */
+
+.found-item-header > div > p:last-child {
+    margin: 0;
+
+    color: var(--text-muted);
+
+    font-size: 15px;
+
+    line-height: 1.6;
+
+    text-align: center;
+}
+
+
+/* =========================================
+   BACK BUTTON
+   ========================================= */
+
+.found-back-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    margin-top: 18px;
+
+    padding: 12px 18px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 15px;
+
+    background: var(--glass);
+
+    color: var(--text-main);
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.found-back-button:hover {
+    background: var(--glass-strong);
+
+    border-color: rgba(37, 99, 235, 0.45);
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================
+   ERROR
+   ========================================= */
+
+.found-error {
+    display: flex;
+
+    align-items: center;
+
+    margin-bottom: 22px;
+
+    padding: 14px 16px;
+
+    border: 1px solid rgba(248, 113, 113, 0.3);
+
+    border-radius: 15px;
+
+    background: rgba(239, 68, 68, 0.12);
+
+    color: #fecaca;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================
+   FORM
+   ========================================= */
+
+.found-item-card form {
+    display: block;
+
+    width: 100%;
+}
+
+
+/* =========================================
+   INPUT GROUP
+   ========================================= */
+
+.found-input-group {
+    position: relative;
+
+    width: 100%;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================================
+   INPUT ICON
+   ========================================= */
+
+.found-input-icon {
+    position: absolute;
+
+    left: 16px;
+    top: 50%;
+
+    z-index: 2;
+
+    transform: translateY(-50%);
+
+    color: var(--primary);
+
+    pointer-events: none;
+}
+
+.textarea-group .found-input-icon {
+    top: 18px;
+
+    transform: none;
+}
+
+
+/* =========================================
+   INPUTS
+   ========================================= */
+
+.found-input-group input,
+.found-input-group textarea,
+.found-input-group select {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    border: 1px solid var(--border);
+
+    border-radius: 15px;
+
+    outline: none;
+
+    background: rgba(255, 255, 255, 0.07);
+
+    color: var(--text-main);
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    transition:
+        border-color 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+/* =========================================
+   TEXT INPUTS
+   ========================================= */
+
+.found-input-group input {
+    height: 52px;
+
+    padding: 0 16px 0 46px;
+}
+
+
+/* =========================================
+   SELECT
+   ========================================= */
+
+.found-input-group select {
+    height: 52px;
+
+    padding: 0 16px;
+
+    cursor: pointer;
+
+    appearance: auto;
+}
+
+.found-input-group select option {
+    background: var(--background-light);
+
+    color: var(--text-main);
+}
+
+
+/* =========================================
+   TEXTAREA
+   ========================================= */
+
+.found-input-group textarea {
+    min-height: 130px;
+
+    padding: 15px 16px 15px 46px;
+
+    resize: vertical;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================
+   PLACEHOLDER
+   ========================================= */
+
+.found-input-group input::placeholder,
+.found-input-group textarea::placeholder {
+    color: var(--text-muted);
+
+    opacity: 0.7;
+}
+
+
+/* =========================================
+   FOCUS
+   ========================================= */
+
+.found-input-group input:focus,
+.found-input-group textarea:focus,
+.found-input-group select:focus {
+    border-color: var(--primary);
+
+    background: rgba(255, 255, 255, 0.11);
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+
+/* =========================================
+   DATE INPUT
+   ========================================= */
+
+.found-input-group input[type="date"] {
+    color-scheme: dark;
+}
+
+
+/* =========================================
+   FILE UPLOAD
+   ========================================= */
+
+.found-file-upload {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+    margin: 5px 0 25px;
+
+    padding: 18px;
+
+    border: 1px dashed rgba(37, 99, 235, 0.5);
+
+    border-radius: 15px;
+
+    background: rgba(37, 99, 235, 0.06);
+
+    color: var(--text-muted);
+
+    transition:
+        background 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.found-file-upload:hover {
+    background: rgba(37, 99, 235, 0.10);
+
+    border-color: var(--primary);
+}
+
+
+/* =========================================
+   FILE LABEL
+   ========================================= */
+
+.found-file-upload label {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: var(--text-main);
+
+    font-size: 14px;
+
+    font-weight: 800;
+}
+
+.found-file-upload label svg {
+    color: var(--primary);
+}
+
+
+/* =========================================
+   FILE DESCRIPTION
+   ========================================= */
+
+.found-file-upload p {
+    margin: 0;
+
+    color: var(--text-muted);
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================
+   FILE INPUT
+   ========================================= */
+
+.found-file-upload input[type="file"] {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    color: var(--text-muted);
+
+    font-family: inherit;
+
+    cursor: pointer;
+}
+
+
+/* =========================================
+   IMAGE PREVIEW
+   ========================================= */
+
+.found-image-preview {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    margin-bottom: 25px;
+
+    padding: 12px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 15px;
+
+    background: rgba(0, 0, 0, 0.16);
+
+    text-align: center;
+}
+
+
+/* =========================================
+   PREVIEW IMAGE
+   ========================================= */
+
+.found-image-preview img {
+    display: block;
+
+    width: 100%;
+
+    max-height: 300px;
+
+    object-fit: contain;
+
+    border-radius: 10px;
+}
+
+
+/* =========================================
+   SUBMIT BUTTON
+   ========================================= */
+
+.found-submit-button {
+    width: 100%;
+
+    min-height: 52px;
+
+    box-sizing: border-box;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    padding: 0 20px;
+
+    border: none;
+
+    border-radius: 15px;
+
+    background: var(--primary);
+
+    color: var(--text-main);
+
+    font-family: inherit;
+
+    font-size: 16px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.found-submit-button:hover {
+    background: var(--primary-hover);
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 25px rgba(37, 99, 235, 0.20);
+}
+
+.found-submit-button:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 650px) {
+
+    .found-item-container {
+        padding: 30px 15px 50px;
+    }
+
+    .found-item-card {
+        width: 100%;
+
+        padding: 30px 22px;
+
+        border-radius: 20px;
+    }
+
+    .found-item-header h1 {
+        font-size: 27px;
+    }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+   ========================================= */
+
+@media (max-width: 450px) {
+
+    .found-item-container {
+        padding: 20px 10px 40px;
+    }
+
+    .found-item-card {
+        padding: 24px 16px;
+    }
+
+    .found-item-header h1 {
+        font-size: 24px;
+    }
+
+    .found-item-header > div > p:last-child {
+        font-size: 14px;
+    }
+}
+/* Final bright report theme */
+.found-item-card { background:rgba(255,255,255,.95)!important; border-color:#dce8f8!important; box-shadow:0 18px 46px rgba(37,99,235,.12)!important; backdrop-filter:none!important; }
+.found-item-card input,.found-item-card textarea,.found-item-card select { background:#fff!important; color:#10213b!important; border-color:#cad8eb!important; }
+.found-item-card button[type="submit"] { background:linear-gradient(135deg,#2563eb,#7c3aed)!important; color:#fff!important; }

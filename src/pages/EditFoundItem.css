@@ -1,0 +1,734 @@
+/* =========================================
+   EDIT FOUND ITEM
+   Uses the global UserDashboard theme
+   ========================================= */
+
+.edit-found-page {
+  min-height: 100vh;
+  padding: 50px 25px 70px;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  /* Use the global body background */
+  background: transparent;
+
+  color: var(--text-main);
+}
+
+
+/* =========================================
+   MAIN CARD
+   ========================================= */
+
+.edit-found-card {
+  width: min(850px, 100%);
+  padding: 38px;
+
+  box-sizing: border-box;
+
+  background: var(--glass);
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+
+  box-shadow: var(--shadow);
+}
+
+
+/* =========================================
+   HEADER
+   ========================================= */
+
+.edit-found-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  gap: 30px;
+  margin-bottom: 35px;
+}
+
+.edit-title-area {
+  min-width: 0;
+}
+
+.edit-found-eyebrow {
+  margin: 0 0 8px;
+
+  color: var(--primary);
+
+  font-size: 11px;
+  font-weight: 900;
+
+  letter-spacing: 0.16em;
+}
+
+.edit-found-header h1 {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+  margin: 0;
+
+  color: var(--text-main);
+
+  font-size: 32px;
+  line-height: 1.2;
+  font-weight: 800;
+}
+
+.edit-found-header h1 svg {
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+.edit-subtitle {
+  margin: 10px 0 0;
+
+  color: var(--text-muted);
+
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+
+/* =========================================
+   BACK BUTTON
+   ========================================= */
+
+.edit-back-button {
+  flex-shrink: 0;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  padding: 12px 18px;
+
+  border: 1px solid var(--border);
+  border-radius: 15px;
+
+  background: var(--glass);
+
+  color: var(--text-main);
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.edit-back-button:hover {
+  background: var(--glass-strong);
+
+  border-color: rgba(37, 99, 235, 0.45);
+
+  transform: translateY(-3px);
+}
+
+
+/* =========================================
+   ERROR
+   ========================================= */
+
+.edit-found-error {
+  display: flex;
+  align-items: center;
+
+  margin-bottom: 22px;
+  padding: 14px 16px;
+
+  border: 1px solid rgba(248, 113, 113, 0.3);
+  border-radius: 15px;
+
+  background: rgba(239, 68, 68, 0.12);
+
+  color: #fecaca;
+
+  font-size: 14px;
+}
+
+
+/* =========================================
+   FORM FIELDS
+   ========================================= */
+
+.edit-field {
+  margin-bottom: 22px;
+}
+
+.edit-field > label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: var(--text-main);
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+
+/* =========================================
+   INPUT WRAPPER
+   ========================================= */
+
+.edit-input-group {
+  position: relative;
+}
+
+
+/* =========================================
+   INPUTS
+   ========================================= */
+
+.edit-input-group input,
+.edit-input-group textarea,
+.edit-input-group select {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  border: 1px solid var(--border);
+  border-radius: 15px;
+
+  outline: none;
+
+  background: rgba(255, 255, 255, 0.07);
+
+  color: var(--text-main);
+
+  font-family: inherit;
+  font-size: 15px;
+
+  transition:
+    border-color 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.edit-input-group input,
+.edit-input-group select {
+  height: 52px;
+}
+
+.edit-input-group input {
+  padding: 0 16px 0 46px;
+}
+
+.edit-input-group select {
+  padding: 0 16px;
+  cursor: pointer;
+}
+
+.edit-input-group textarea {
+  min-height: 140px;
+
+  padding: 15px 16px 15px 46px;
+
+  resize: vertical;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================
+   INPUT FOCUS
+   ========================================= */
+
+.edit-input-group input:focus,
+.edit-input-group textarea:focus,
+.edit-input-group select:focus {
+  border-color: var(--primary);
+
+  background: rgba(255, 255, 255, 0.11);
+
+  box-shadow:
+    0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+
+/* =========================================
+   PLACEHOLDERS
+   ========================================= */
+
+.edit-input-group input::placeholder,
+.edit-input-group textarea::placeholder {
+  color: var(--text-muted);
+  opacity: 0.65;
+}
+
+
+/* =========================================
+   INPUT ICON
+   ========================================= */
+
+.edit-input-icon {
+  position: absolute;
+
+  left: 16px;
+  top: 18px;
+
+  z-index: 2;
+
+  color: var(--primary);
+
+  pointer-events: none;
+}
+
+.textarea-group .edit-input-icon {
+  top: 19px;
+}
+
+
+/* =========================================
+   SELECT
+   ========================================= */
+
+.edit-input-group select option {
+  background: var(--background-light);
+  color: var(--text-main);
+}
+
+
+/* =========================================
+   TWO COLUMN
+   ========================================= */
+
+.edit-two-column {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 20px;
+}
+
+
+/* =========================================
+   IMAGE SECTION
+   ========================================= */
+
+.edit-image-section {
+  margin-top: 28px;
+  margin-bottom: 28px;
+
+  padding: 22px;
+
+  background: rgba(255, 255, 255, 0.06);
+
+  border: 1px solid var(--border);
+  border-radius: 20px;
+}
+
+.edit-image-heading {
+  margin-bottom: 16px;
+}
+
+.edit-image-heading label {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  color: var(--text-main);
+
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.edit-image-heading label svg {
+  color: var(--primary);
+}
+
+.edit-image-heading p {
+  margin: 7px 0 0;
+
+  color: var(--text-muted);
+
+  font-size: 13px;
+}
+
+
+/* =========================================
+   IMAGE UPLOAD
+   ========================================= */
+
+.edit-file-upload input {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+
+  opacity: 0;
+  pointer-events: none;
+}
+
+.edit-file-upload label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  width: 100%;
+  min-height: 54px;
+
+  box-sizing: border-box;
+
+  border: 1px dashed rgba(37, 99, 235, 0.5);
+  border-radius: 15px;
+
+  background: rgba(37, 99, 235, 0.06);
+
+  color: #eff6ff;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.edit-file-upload label:hover {
+  background: rgba(37, 99, 235, 0.12);
+
+  border-color: var(--primary);
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================
+   IMAGE PREVIEW
+   ========================================= */
+
+.edit-image-preview {
+  position: relative;
+
+  margin-top: 18px;
+  padding: 12px;
+
+  border: 1px solid var(--border);
+  border-radius: 15px;
+
+  background: rgba(0, 0, 0, 0.16);
+
+  text-align: center;
+}
+
+.edit-image-preview img {
+  display: block;
+
+  width: 100%;
+  max-height: 300px;
+
+  object-fit: contain;
+
+  border-radius: 10px;
+}
+
+
+/* =========================================
+   REMOVE IMAGE
+   ========================================= */
+
+.remove-image-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  margin-top: 12px;
+
+  padding: 10px 15px;
+
+  border: 1px solid rgba(248, 113, 113, 0.3);
+  border-radius: 12px;
+
+  background: rgba(239, 68, 68, 0.1);
+
+  color: #fca5a5;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.remove-image-button:hover {
+  background: rgba(239, 68, 68, 0.2);
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================
+   FORM ACTIONS
+   ========================================= */
+
+.edit-form-actions {
+  display: flex;
+  justify-content: flex-end;
+
+  gap: 12px;
+
+  padding-top: 24px;
+
+  border-top: 1px solid var(--border);
+}
+
+.cancel-edit-button,
+.edit-save-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  min-height: 50px;
+
+  padding: 0 21px;
+
+  border-radius: 15px;
+
+  font-size: 14px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
+}
+
+
+/* =========================================
+   CANCEL
+   ========================================= */
+
+.cancel-edit-button {
+  border: 1px solid var(--border);
+
+  background: var(--glass);
+
+  color: var(--text-main);
+}
+
+.cancel-edit-button:hover {
+  background: var(--glass-strong);
+
+  transform: translateY(-3px);
+}
+
+
+/* =========================================
+   SAVE
+   ========================================= */
+
+.edit-save-button {
+  min-width: 180px;
+
+  border: none;
+
+  background: var(--primary);
+
+  color: var(--text-main);
+}
+
+.edit-save-button:hover {
+  background: var(--primary-hover);
+
+  transform: translateY(-3px);
+}
+
+.edit-save-button:active,
+.cancel-edit-button:active {
+  transform: translateY(0);
+}
+
+
+/* =========================================
+   LOADING
+   ========================================= */
+
+.edit-loading-card {
+  text-align: center;
+
+  padding: 60px 35px;
+}
+
+.edit-loading-icon {
+  margin-bottom: 18px;
+
+  color: var(--primary);
+
+  font-size: 52px;
+}
+
+.edit-loading-card h1 {
+  margin: 0 0 8px;
+}
+
+.edit-loading-card p {
+  margin: 0;
+
+  color: var(--text-muted);
+}
+
+
+/* =========================================
+   NOT FOUND
+   ========================================= */
+
+.error-card {
+  text-align: center;
+
+  padding: 55px 35px;
+}
+
+.error-icon {
+  margin-bottom: 15px;
+
+  color: var(--primary);
+
+  font-size: 55px;
+}
+
+.error-card h1 {
+  margin: 0 0 10px;
+
+  font-size: 28px;
+}
+
+.error-message {
+  max-width: 500px;
+
+  margin: 0 auto 25px;
+
+  color: var(--text-muted);
+
+  line-height: 1.6;
+}
+
+.error-back-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  padding: 12px 18px;
+
+  border: none;
+  border-radius: 15px;
+
+  background: var(--primary);
+
+  color: var(--text-main);
+
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.error-back-button:hover {
+  background: var(--primary-hover);
+
+  transform: translateY(-3px);
+}
+
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+@media (max-width: 700px) {
+
+  .edit-found-page {
+    padding: 30px 15px 50px;
+  }
+
+  .edit-found-card {
+    padding: 28px 20px;
+
+    border-radius: 20px;
+  }
+
+  .edit-found-header {
+    flex-direction: column;
+
+    gap: 18px;
+  }
+
+  .edit-found-header h1 {
+    font-size: 27px;
+  }
+
+  .edit-back-button {
+    width: 100%;
+  }
+
+  .edit-two-column {
+    grid-template-columns: 1fr;
+
+    gap: 0;
+  }
+
+  .edit-form-actions {
+    flex-direction: column-reverse;
+  }
+
+  .cancel-edit-button,
+  .edit-save-button {
+    width: 100%;
+  }
+}
+
+
+@media (max-width: 450px) {
+
+  .edit-found-page {
+    padding: 20px 10px 40px;
+  }
+
+  .edit-found-card {
+    padding: 22px 16px;
+  }
+
+  .edit-found-header h1 {
+    font-size: 24px;
+  }
+
+  .edit-subtitle {
+    font-size: 13px;
+  }
+
+  .edit-image-section {
+    padding: 16px;
+  }
+}

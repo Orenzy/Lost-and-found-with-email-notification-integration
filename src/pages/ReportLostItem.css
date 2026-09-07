@@ -1,0 +1,424 @@
+/* =========================================
+   REPORT LOST ITEM
+   GLOBAL DARK GREEN GRADIENT THEME
+   ========================================= */
+
+.lost-item-container {
+    width: 100%;
+    min-height: 100vh;
+
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    margin: 0;
+    padding: 50px 25px 70px;
+
+    /* SAME BACKGROUND AS GLOBAL BODY */
+    background:
+        radial-gradient(
+            circle at top left,
+            rgba(37, 99, 235, 0.25),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at bottom right,
+            rgba(124, 92, 255, 0.20),
+            transparent 40%
+        ),
+        linear-gradient(
+            135deg,
+            #f4f0ff,
+            #eaf3ff
+        );
+
+    color: var(--text-main);
+}
+
+
+/* =========================================
+   MAIN CARD
+   ========================================= */
+
+.lost-item-card {
+    width: 600px;
+    max-width: 100%;
+
+    box-sizing: border-box;
+
+    margin: 0 auto;
+
+    padding: 40px;
+
+    background: var(--glass);
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow);
+
+    color: var(--text-main);
+}
+
+
+/* =========================================
+   TITLE
+   ========================================= */
+
+.lost-item-card h1 {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    margin: 0 0 10px;
+
+    color: var(--text-main);
+
+    font-size: 32px;
+    font-weight: 800;
+
+    text-align: center;
+}
+
+.lost-item-card h1 svg {
+    color: var(--primary);
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================
+   DESCRIPTION
+   ========================================= */
+
+.lost-item-card > p {
+    margin: 0 0 30px;
+
+    color: var(--text-muted);
+
+    font-size: 15px;
+
+    text-align: center;
+}
+
+
+/* =========================================
+   INPUT GROUP
+   ========================================= */
+
+.input-group {
+    position: relative;
+
+    width: 100%;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================================
+   INPUT ICON
+   ========================================= */
+
+.input-group .icon {
+    position: absolute;
+
+    left: 16px;
+    top: 50%;
+
+    z-index: 2;
+
+    transform: translateY(-50%);
+
+    color: var(--primary);
+
+    pointer-events: none;
+}
+
+.textarea-group .icon {
+    top: 18px;
+
+    transform: none;
+}
+
+
+/* =========================================
+   INPUTS
+   ========================================= */
+
+.input-group input,
+.input-group textarea,
+.lost-item-card select {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    border: 1px solid var(--border);
+
+    border-radius: 15px;
+
+    outline: none;
+
+    background: rgba(255, 255, 255, 0.07);
+
+    color: var(--text-main);
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    transition:
+        border-color 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+/* =========================================
+   TEXT INPUTS
+   ========================================= */
+
+.input-group input {
+    height: 52px;
+
+    padding: 0 16px 0 46px;
+}
+
+
+/* =========================================
+   TEXTAREA
+   ========================================= */
+
+.input-group textarea {
+    min-height: 130px;
+
+    padding: 15px 16px 15px 46px;
+
+    resize: vertical;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================
+   CATEGORY SELECT
+   ========================================= */
+
+.lost-item-card select {
+    height: 52px;
+
+    margin-bottom: 20px;
+
+    padding: 0 16px;
+
+    cursor: pointer;
+}
+
+.lost-item-card select option {
+    background: #f4f0ff;
+
+    color: white;
+}
+
+
+/* =========================================
+   PLACEHOLDER
+   ========================================= */
+
+.input-group input::placeholder,
+.input-group textarea::placeholder {
+    color: var(--text-muted);
+
+    opacity: 0.7;
+}
+
+
+/* =========================================
+   FOCUS
+   ========================================= */
+
+.input-group input:focus,
+.input-group textarea:focus,
+.lost-item-card select:focus {
+    border-color: var(--primary);
+
+    background: rgba(255, 255, 255, 0.11);
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+
+/* =========================================
+   DATE INPUT
+   ========================================= */
+
+.input-group input[type="date"] {
+    color-scheme: dark;
+}
+
+
+/* =========================================
+   FILE UPLOAD
+   ========================================= */
+
+.file-upload {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin: 5px 0 25px;
+
+    padding: 14px 16px;
+
+    border: 1px dashed rgba(37, 99, 235, 0.5);
+
+    border-radius: 15px;
+
+    background: rgba(37, 99, 235, 0.06);
+
+    color: var(--text-muted);
+
+    transition:
+        background 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.file-upload:hover {
+    background: rgba(37, 99, 235, 0.10);
+
+    border-color: var(--primary);
+}
+
+.file-upload > svg {
+    flex-shrink: 0;
+
+    color: var(--primary);
+
+    font-size: 20px;
+}
+
+.file-upload input {
+    width: 100%;
+
+    color: var(--text-muted);
+
+    font-family: inherit;
+
+    cursor: pointer;
+}
+
+
+/* =========================================
+   SUBMIT BUTTON
+   ========================================= */
+
+.lost-item-card button {
+    width: 100%;
+
+    min-height: 52px;
+
+    box-sizing: border-box;
+
+    padding: 0 20px;
+
+    border: none;
+
+    border-radius: 15px;
+
+    background: var(--primary);
+
+    color: var(--text-main);
+
+    font-family: inherit;
+
+    font-size: 16px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.lost-item-card button:hover {
+    background: var(--primary-hover);
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 25px rgba(37, 99, 235, 0.20);
+}
+
+.lost-item-card button:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 650px) {
+
+    .lost-item-container {
+        padding: 30px 15px 50px;
+    }
+
+    .lost-item-card {
+        width: 100%;
+
+        padding: 30px 22px;
+
+        border-radius: 20px;
+    }
+
+    .lost-item-card h1 {
+        font-size: 27px;
+    }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+   ========================================= */
+
+@media (max-width: 450px) {
+
+    .lost-item-container {
+        padding: 20px 10px 40px;
+    }
+
+    .lost-item-card {
+        padding: 24px 16px;
+    }
+
+    .lost-item-card h1 {
+        font-size: 24px;
+    }
+
+    .lost-item-card > p {
+        font-size: 14px;
+    }
+}
+/* Final bright report theme */
+.lost-item-card { background:rgba(255,255,255,.95); border-color:#dce8f8; box-shadow:0 18px 46px rgba(37,99,235,.12); backdrop-filter:none; }
+.input-group input,.input-group textarea,.lost-item-card select { background:#fff; color:#10213b; border-color:#cad8eb; }
+.lost-item-card button[type="submit"] { background:linear-gradient(135deg,#2563eb,#7c3aed); color:#fff; }
